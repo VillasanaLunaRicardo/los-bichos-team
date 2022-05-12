@@ -1,0 +1,95 @@
+<mxfile host="65bd71144e">
+    <diagram id="-YqazT6KSZxJcXBPGDCI" name="Page-1">
+        <mxGraphModel dx="785" dy="478" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="1" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="16" value="Producto" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#a20025;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;fontColor=#ffffff;strokeColor=#6F0000;" parent="1" vertex="1">
+                    <mxGeometry x="80" y="60" width="140" height="160" as="geometry"/>
+                </mxCell>
+                <mxCell id="22" value="" style="endArrow=open;startArrow=cross;endFill=0;startFill=0;endSize=8;startSize=10;html=1;fontColor=#000000;" parent="16" edge="1">
+                    <mxGeometry width="160" relative="1" as="geometry">
+                        <mxPoint x="140" y="58" as="sourcePoint"/>
+                        <mxPoint x="240" y="58" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="17" value="PK Id_prod&#10;PK codigo_prod&#10;      nombre&#10;      precio&#10;      descrpccion&#10;      imagen&#10;FK categoria &#10;      cant_stock" style="text;strokeColor=#B0011F;fillColor=#F3F8FC;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000;" parent="16" vertex="1">
+                    <mxGeometry y="26" width="140" height="134" as="geometry"/>
+                </mxCell>
+                <mxCell id="20" value="categorias" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#a20025;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;fontColor=#ffffff;strokeColor=#6F0000;" parent="1" vertex="1">
+                    <mxGeometry x="320" y="70" width="140" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="21" value="PK  Id_categoria&#10;FK  Id_prod&#10;       categoria&#10;        " style="text;strokeColor=#B0011F;fillColor=#F3F8FC;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000;" parent="20" vertex="1">
+                    <mxGeometry y="26" width="140" height="64" as="geometry"/>
+                </mxCell>
+                <mxCell id="23" value="descripccion" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#a20025;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;fontColor=#ffffff;strokeColor=#6F0000;" parent="1" vertex="1">
+                    <mxGeometry x="530" y="60" width="140" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="24" value="PK  Id_prod&#10;        nombre&#10;        descripccion&#10;        imagen &#10;        categoria &#10;        " style="text;strokeColor=#B0011F;fillColor=#F3F8FC;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000;" parent="23" vertex="1">
+                    <mxGeometry y="26" width="140" height="94" as="geometry"/>
+                </mxCell>
+                <mxCell id="25" value="" style="endArrow=open;startArrow=cross;endFill=0;startFill=0;endSize=8;startSize=10;html=1;fontColor=#000000;" parent="1" edge="1">
+                    <mxGeometry width="160" relative="1" as="geometry">
+                        <mxPoint x="220" y="118" as="sourcePoint"/>
+                        <mxPoint x="320" y="118" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="270" y="118"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="28" value="detales_orden " style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#a20025;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;fontColor=#ffffff;strokeColor=#6F0000;" parent="1" vertex="1">
+                    <mxGeometry x="80" y="280" width="140" height="130" as="geometry"/>
+                </mxCell>
+                <mxCell id="29" value="PK  Id_detalle_orden&#10;FK   id_orden&#10;FK   prod_id&#10;       precio&#10;PK  codigo_prod&#10;       cant_stock" style="text;strokeColor=#B0011F;fillColor=#F3F8FC;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000;" parent="28" vertex="1">
+                    <mxGeometry y="26" width="140" height="104" as="geometry"/>
+                </mxCell>
+                <mxCell id="30" value="orden" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#a20025;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;fontColor=#ffffff;strokeColor=#6F0000;" parent="1" vertex="1">
+                    <mxGeometry x="300" y="280" width="140" height="150" as="geometry"/>
+                </mxCell>
+                <mxCell id="31" value="PK    id_orden&#10;FK    id_cliente  &#10;         fecha &#10;         total&#10;         estado&#10;         correo_elec  &#10;         direc_envio&#10;" style="text;strokeColor=#B0011F;fillColor=#F3F8FC;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000;" parent="30" vertex="1">
+                    <mxGeometry y="26" width="140" height="124" as="geometry"/>
+                </mxCell>
+                <mxCell id="32" value="cliente" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#a20025;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;fontColor=#ffffff;strokeColor=#6F0000;" parent="1" vertex="1">
+                    <mxGeometry x="520" y="280" width="140" height="150" as="geometry"/>
+                </mxCell>
+                <mxCell id="33" value="PK    id_cliente&#10;         nombre  &#10;         direccion&#10;         total&#10;         telefono&#10;         correo  &#10;         &#10;" style="text;strokeColor=#B0011F;fillColor=#F3F8FC;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000;" parent="32" vertex="1">
+                    <mxGeometry y="26" width="140" height="124" as="geometry"/>
+                </mxCell>
+                <mxCell id="34" value="" style="endArrow=open;startArrow=cross;endFill=0;startFill=0;endSize=8;startSize=10;html=1;fontColor=#000000;exitX=1.007;exitY=0.391;exitDx=0;exitDy=0;exitPerimeter=0;entryX=-0.014;entryY=0.372;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="21" target="24" edge="1">
+                    <mxGeometry width="160" relative="1" as="geometry">
+                        <mxPoint x="440" y="129.5" as="sourcePoint"/>
+                        <mxPoint x="530" y="130" as="targetPoint"/>
+                        <Array as="points"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="35" value="" style="endArrow=open;startArrow=cross;endFill=0;startFill=0;endSize=8;startSize=10;html=1;fontColor=#000000;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="16" target="28" edge="1">
+                    <mxGeometry width="160" relative="1" as="geometry">
+                        <mxPoint x="240" y="138" as="sourcePoint"/>
+                        <mxPoint x="340" y="138" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="150" y="250"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="36" value="" style="endArrow=open;startArrow=cross;endFill=0;startFill=0;endSize=8;startSize=10;html=1;fontColor=#000000;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.435;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="29" target="31" edge="1">
+                    <mxGeometry width="160" relative="1" as="geometry">
+                        <mxPoint x="160" y="230" as="sourcePoint"/>
+                        <mxPoint x="160" y="290" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="260" y="360"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="37" value="" style="endArrow=open;startArrow=cross;endFill=0;startFill=0;endSize=8;startSize=10;html=1;fontColor=#000000;" parent="1" edge="1">
+                    <mxGeometry width="160" relative="1" as="geometry">
+                        <mxPoint x="440" y="355" as="sourcePoint"/>
+                        <mxPoint x="520" y="355" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="480" y="354.5"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
