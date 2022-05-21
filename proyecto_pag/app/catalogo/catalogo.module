@@ -1,0 +1,27 @@
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { NavbarComponent } from './navbar/navbar.component';
+import { BannerComponent } from './banner/banner.component';
+import { ProductoComponent } from './producto/producto.component';
+import { FooterComponent } from './footer/footer.component';
+import { DatalleProdComponent } from './datalle-prod/datalle-prod.component';
+import { CarritoComponent } from './carrito/carrito.component';
+import { InicioSesComponent } from './inicio-ses/inicio-ses.component';
+import { InfTargetaComponent } from './inf-targeta/inf-targeta.component';
+import { InfEnvioComponent } from './inf-envio/inf-envio.component';
+import { CatalogoRoutingModule } from './catalogo-routing/catalogo-routing.module';
+import { ReactiveFormsModule } from '@angular/forms';
+
+
+
+@NgModule({
+  declarations: [
+    
+  ],
+  imports: [
+    CommonModule,
+    CatalogoRoutingModule,
+    ReactiveFormsModule
+  ]
+})
+export class CatalogoModule { }
