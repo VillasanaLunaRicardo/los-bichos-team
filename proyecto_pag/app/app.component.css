@@ -1,0 +1,33 @@
+label{
+    display: inline-block;
+    width: 100px;
+    text-align: center;
+    text-decoration-color:beige;
+    
+  }
+body{
+    background-color:white;
+}
+
+button{
+    text-align: center;
+    text-decoration-color: white;
+}
+
+h1{
+    text-align: center;
+}
+div.card{
+    text-align: left;
+}
+
+div.product-block{
+    
+    display: inline-block; 
+    text-align: center; 
+}
+
+div.product-block.img{
+    text-align: center;
+    
+}
