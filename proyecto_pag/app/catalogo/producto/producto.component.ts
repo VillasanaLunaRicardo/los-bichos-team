@@ -9,32 +9,28 @@ import { ActivatedRoute,Route,Router } from '@angular/router';
 export class ProductoComponent implements OnInit {
   id='';
   constructor(private route:Router, private Ruta:ActivatedRoute) {
-
    }
-
    OnInit(){
      this.id=this.Ruta.snapshot.paramMap.get('id')+'';
    }
    Mostrarprod(){
-     this.route.navigate([''])
+     this.route.navigate(['catalogo/producto'])
    }
    mostrardescrip(){
-    this.route.navigate([''])
+    this.route.navigate(['catalogo/datalle-prod'])
    }
    carrito(){
-    this.route.navigate([''])
+    this.route.navigate(['catalogo/carrito'])
    }
-   inicioses(){
-    this.route.navigate([''])
+   iniciosesesion(){
+    this.route.navigate(['catalogo/inicio-ses'])
    }
    infotargeta(){
-    this.route.navigate([''])
+    this.route.navigate(['catalogo/inf-targeta'])
    }
    infoenvio(){
-    this.route.navigate([''])
+    this.route.navigate(['catalogo/inf-envio'])
    }
-   
-
   ngOnInit(): void {
   }
 
