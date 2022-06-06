@@ -33,6 +33,13 @@ export class InicioSesComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    this.validar();
+  }
+  validar(){
+    this.datos=new FormGroup({
+      email: new FormControl("",[Validators.required,Validators.email]),
+      password: new FormControl("",[Validators.required])
+    })
   }
 
 }
