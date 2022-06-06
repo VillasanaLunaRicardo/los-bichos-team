@@ -33,6 +33,13 @@ export class InfTargetaComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    this.validar();
+  }
+
+validar(){
+    this.datos=new FormGroup({
+      password: new FormControl("",[Validators.required])
+    })
   }
 
 }
