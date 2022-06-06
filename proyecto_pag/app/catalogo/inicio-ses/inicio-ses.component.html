@@ -1,16 +1,15 @@
-
 <h1>Inicio de sesion</h1>
-  <form>
+  <form [formGroup]=datos>
     <div class="mb-3">
       <label for="exampleInputEmail1" class="form-label">Introduzca su correo</label>
-      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+      <input formControlName="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
       placeholder="ejemplo@gmail.com">
     </div>
     <div class="mb-3">
       <label for="exampleInputPassword1" class="form-label">Contraseña</label>
-      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="***********">
+      <input formControlName="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="***********">
     </div>
     
-    <button type="submit" class="btn btn-dark" style="background-color: #970000;">Iniciar secion</button> 
+    <button [disabled]="datos.invalid" type="submit" class="btn btn-dark" style="background-color: #970000;">Iniciar secion</button> 
     <button type="submit" class="btn btn-dark" style="background-color: #970000;">olvide mi contraseña</button>
   </form>
