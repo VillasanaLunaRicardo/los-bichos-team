@@ -1,24 +1,25 @@
 
 <h1>Informacion de Tarjeta Bancaria</h1>
-  <form>
+  <form [formGroup]=datos>
     <div class="mb-3">
-      <label for="exampleInputEmail1" class="form-label" >Numero de tarjeta</label>
-      <input type="password" style=" font-weight: bold;" placeholder="XXXX-XXXX-XXXX-XXXX">
+      <label for="exampleInputPassword1" class="form-label" >Numero de targeta</label>
+      <input formControlName="password" type="password" class="form-control" id="text"  style=" font-weight: bold;" placeholder="XXXX-XXXX-XXXX-XXXX">
     </div>
     <div class="mb-3">
-      <label for="exampleInputPassword1" class="form-label" wei>Fecha de caducidad</label>
+      <label for="exampleInputPassword2" class="form-label" wei>Fecha de caducidad</label>
       <input type="date" style=" font-weight: bold;">
       <label for="exampleInputEmail1" class="form-label" >CVV</label>
-      <input type="password" style=" font-weight: bold;"placeholder="XXX">
+      <input formControlName="password" type="password" style="font-weight: bold;"placeholder="XXX">
     </div>
     <div class="mb-3">
-      <label for="exampleInputEmail1" class="form-label" >Titular de la tarjeta</label>
-      <input type=""placeholder="Nombre y Apellido">
+      <label for="exampleInputEmail1" class="form-label" >Titular de la targeta</label>
+      <input type="name" placeholder="Nombre y Apellido">
     </div>
     <div class="mb-3">
-      <label for="exampleInputEmail1" class="form-label" >Emisor de la tarjeta</label>
-      <input type="" placeholder="Nombre del Banco">
+      <label for="exampleInputEmail1" class="form-label" >Emisor de la targeta</label>
+      <input type="bank" placeholder="Nombre del Banco">
     </div>
-    <button type="submit" class="btn btn-dark" style="background-color: #970000;" (click)="Mostrarprod()">Continuar</button> 
-    <button type="submit" class="btn btn-dark" style="background-color: #970000;" (click)="infoenvio()">Cancelar</button>
+    <button type="submit" class="btn btn-dark" style="background-color: #970000;" (click)="Mostrarprod()">Cancelar</button>
+    <button [disabled]="datos.invalid" type="submit" class="btn btn-dark" style="background-color: #970000;" (click)="infoenvio()">Continuar</button> 
+    
   </form>
