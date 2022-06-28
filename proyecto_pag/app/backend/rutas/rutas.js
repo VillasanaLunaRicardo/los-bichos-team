@@ -12,6 +12,10 @@ routes.get('/catalogo/info-envio',(req, res)=>{
   res.send('informacion del envio');
 });
 
+routes.get('/catalogo/detalle-prod',(req, res)=>{
+        res.send('detalle');
+      });
+
 routes.get('/envio',(req, res)=>{
     let sql = "select nombre, apellido, telefono, calle, ciudad, estado, codigo_postal from cliente;";
     consulta.query(sql,(err,rows)=>{
