@@ -60,3 +60,15 @@ routes.get('/envio',(req, res)=>{
        
         })
        });
+    routes.get('/catalogo_productos',(req, res)=>{
+    let sql = "select nombre, descripcion, precio from producto;";
+    conexion.query(sql,(err,rows)=>{
+     if(!err){
+       res.json(rows);
+     }
+     else{
+       console.log(err);
+     }
+   
+    })
+   });
