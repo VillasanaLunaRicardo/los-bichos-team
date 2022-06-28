@@ -1,3 +1,5 @@
+const { query } = require('express');
+const consulta = require('../conf/conexion');
 const routes=require('express').Router();
 
 routes.get('/catalogo',(req, res)=>{
