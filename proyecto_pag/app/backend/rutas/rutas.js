@@ -21,4 +21,15 @@ routes.get('/envio',(req, res)=>{
      }
    
     })
+    // ruta de la tabla producto
+    routes.get('/producto',(req,res)=>{
+    let query = "SELECT * from producto"
+    conexion.query(query,(err,rows)=>{
+        if(!err){
+            res.json(rows);
+        }
+        else{
+            console.log(err);
+        }
+        })
    });
