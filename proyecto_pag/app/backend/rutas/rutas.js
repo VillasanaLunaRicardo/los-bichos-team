@@ -33,3 +33,30 @@ routes.get('/envio',(req, res)=>{
         }
         })
    });
+    
+    routes.get('/detalles_producto/:id',(req, res)=>{
+    const {id}= req.params;
+      let sql = "select imagen, nombre, precio,idproducto, stock, descripcion from producto;";
+      conexion.query(sql,[id],(err,rows)=>{
+       if(!err){
+         res.json(rows);
+       }
+       else{
+         console.log(err);
+       }
+     
+      })
+     });
+
+     routes.get('/info_carrito',(req, res)=>{
+        let sql = "select nombre, stock, precio from producto;";
+        conexion.query(sql,(err,rows)=>{
+         if(!err){
+           res.json(rows);
+         }
+         else{
+           console.log(err);
+         }
+       
+        })
+       });
