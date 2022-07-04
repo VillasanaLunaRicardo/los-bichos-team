@@ -98,4 +98,65 @@ routes.get('/envio',(req, res)=>{
        
         })
        });
+     //MODULO DETALLE-PRODUCTO
+
+//detalles de producto por id
+//GET
+routes.get('/detalles_producto/:id',(req, res)=>{
+    const {id}= req.params;
+      let sql = "select imagen, nombre, precio,idproducto, stock, descripcion from producto where idproducto = ?;";
+      consulta.query(sql,[id],(err,rows)=>{
+       if(!err){
+         res.json(rows);
+       }
+       else{
+         console.log(err);
+       }
      
+      })
+     });
+
+//PUT  
+  routes.put('/modificadetalles',(req, res)=>{
+   const {nombre, precio, stock, descripcion, idproducto}= req.body;     
+   let query = "UPDATE `ProyectoTP`.`producto` SET `nombre`= '"+nombre+"', `precio`='"+precio+"', `stock`= '"+stock+"', `descripcion`= '"+descripcion+"', `idproducto` = '"+idproducto+"' WHERE (`idproducto` = '"+idproducto+"');";
+    consulta.query(query, (err,rows)=>{
+     if(!err){
+      res.json('Actualizadondo datos');
+    }
+      else{
+     console.error(err);
+          }
+        
+    });
+});        
+//POST
+routes.post('/detallesinserta',(req, res)=>{
+    const {imagen,nombre,precio,stock,descripcion,idproducto}= req.body;
+    let sql = "INSERT INTO producto (imagen, nombre, precio, stock, descripcion, idproducto) VALUES ('"+imagen+"','"+nombre+"', '"+precio+"', '"+stock+"', '"+descripcion+"', '"+idproducto+"');";
+    //let sql = "INSERT INTO rol (id_rol, rol) VALUES ('"+id_rol+"', '"+nombre_rol+"')";
+    consulta.query(sql,(err,rows)=>{
+     if(!err){
+       res.json('registro insertado');
+     }
+     else{
+       console.log(err);
+     }
+   
+    })
+   });
+
+   //DELETE
+   routes.delete('/deletedetalle/:id', (req,res)=>{
+    const {id}= req.params;
+    let sql = "delete from producto where idproducto=?;";
+    consulta.query(sql,[id],(err,rows)=>{
+        if(!err){
+            res.json("registro eliminado exitosamente");
+        }
+        else{
+            console.log(err);
+        }
+    })
+  })
+
