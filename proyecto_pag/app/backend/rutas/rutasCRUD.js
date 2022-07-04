@@ -159,4 +159,77 @@ routes.post('/detallesinserta',(req, res)=>{
         }
     })
   })
+//agregar,modificar,eliminar y consultar un producto
+//get equipos
+routes.get('/producto',(req, res)=>{
+    let sql ='select * from producto'
+    conexion.query(sql,(err, rows, fields)=>{
+        if(err) throw err;
+        else{
+            res.json(rows)
+        }
+    })
 
+})
+
+// get un equipo
+routes.get('/producto/:id',(req, res)=>{
+    const {id} = req.params
+    let sql ='select * from producto where idproducto = ?'
+    conexion.query(sql,[id],(err, rows, fields)=>{
+        if(err) throw err;
+        else{
+            res.json(rows)
+        }
+    })
+})
+
+//agregar equipo
+routes.post('producto/agregar',( req, res)=>{
+    const{nombre, precio,descripcion,categoria,stock} = req.body
+
+    let sql = `insert into producto(nombre,precio,descripcion,categoria,stock) values('${nombre}','${precio}','${descripcion}','${categoria}','${stock}')`
+    conexion.query(sql, (err, rows, fields)=>{
+        if(err) throw err
+        else{
+            res.json({status: 'producto agregado'})
+        }
+    })
+})
+
+//eliminar 
+routes.delete('producto/eliminar/:id',(req, res)=>{
+    const{id} = req.params
+
+    let sql =`delete from producto where idproducto = '${id}'`
+    conexion.query(sql, (err, rows, fields)=>{
+        if(err) throw err
+        else{
+            res.json({status: 'producto eliminado'})
+        }
+    })
+});
+
+//modificar
+routes.put('/producto/modificar/:id',(req, res)=>{
+    const{id}=req.params
+    const{nombre, precio,descripcion, categoria, stock} = req.body
+
+    let sql = `update producto set 
+                nombre ='${nombre}',
+                precio='${precio}',
+                descripcion='${descripcion}',
+                categoria='${categoria}',
+                stock='${stock}'
+                where idproducto = '${id}'
+                `
+    
+    conexion.query(sql, (err, rows, fields)=>{
+        if(err) throw err
+        else{
+            res.json({status: 'producto modificado'})
+        }
+    })
+
+})
+    module.exports=routes
