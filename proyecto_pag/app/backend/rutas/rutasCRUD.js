@@ -172,6 +172,83 @@ routes.get('/producto',(req, res)=>{
 
 })
 
+// consultar detalles producto
+ routes.get('/detalles_producto/:id',(req, res)=>{
+  let sql = "select imagen, nombre, precio,idproducto, stock, descripcion from producto;";
+  consulta.query(sql,(err,rows)=>{
+   if(!err){
+     res.json(rows);
+   }
+   else{
+     console.log(err);
+   }
+ 
+  })
+ });
+
+ //agregar catalogo de productos
+ routes.post('/catalogo_agregar_productos',(req, res)=>{
+    const {nombre,precio,descripcion,imagen,categoria,stock}= req.body;
+  let sql = "INSERT INTO producto (nombre,precio,descripcion,imagen,categoria,stock) VALUES ('"+nombre+"','"+precio+"','"+descripcion+"','"+imagen+"','"+categoria+"','"+stock+"')";
+  consulta.query(sql,[nombre,precio,descripcion,imagen,categoria,stock],(err,rows)=>{
+   if(!err){
+     res.json('registro incertado');
+   }
+   else{
+     console.log(err);
+   }
+ 
+  })
+  
+ });
+
+ //Modificar Precio y stock de producto
+ routes.put('/modificarPrecio_stock',(req, res)=>{
+  const {idproducto,precio,stock}= req.body;
+let sql = "UPDATE `moviles_proyecto_bd`.`producto` SET `precio`= '"+precio+"',`stock`='"+stock+"' WHERE (`idproducto`= '"+idproducto+"')";
+consulta.query(sql,[idproducto,precio,stock],(err,rows)=>{
+ if(!err){
+   res.json('registro modificado');
+ }
+ else{
+   console.log(err);
+ }
+
+})
+
+});
+
+//modificar descripcion y categoria de producto
+routes.put('/modificardescripcion_categoria',(req, res)=>{
+  const {idproducto,descripcion,categoria}= req.body;
+let sql = "UPDATE `moviles_proyecto_bd`.`producto` SET `descripcion`= '"+descripcion+"',`categoria`='"+categoria+"' WHERE (`idproducto`= '"+idproducto+"')";
+consulta.query(sql,[idproducto,descripcion,categoria],(err,rows)=>{
+ if(!err){
+   res.json('registro modificado');
+ }
+ else{
+   console.log(err);
+ }
+
+})
+
+});
+//modificar nombre  e imagen de producto
+routes.put('/modificaNombre_imagen',(req, res)=>{
+  const {idproducto,nombre,imagen}= req.body;
+let sql = "UPDATE `moviles_proyecto_bd`.`producto` SET `nombre`= '"+nombre+"',`imagen`='"+imagen+"' WHERE (`idproducto`= '"+idproducto+"')";
+consulta.query(sql,[idproducto,nombre,imagen],(err,rows)=>{
+ if(!err){
+   res.json('registro incertado');
+ }
+ else{
+   console.log(err);
+ }
+
+})
+
+});
+
 // get un equipo
 routes.get('/producto/:id',(req, res)=>{
     const {id} = req.params
